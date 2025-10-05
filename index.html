@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CosmicBio-Explorer</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js"></script>
+</head>
+<body>
+    <!-- Dimmed Space Background for Better Text Visibility -->
+    <div class="space-background">
+        <div class="background-overlay"></div>
+        <div class="stars-layer stars-small"></div>
+        <div class="stars-layer stars-medium"></div>
+        <div class="stars-layer stars-large"></div>
+        <div class="planets-layer">
+            <div class="planet planet-1"></div>
+            <div class="planet planet-2"></div>
+            <div class="planet planet-3"></div>
+        </div>
+        <div class="cosmic-dust"></div>
+        <div class="nebula-glow"></div>
+    </div>
+
+    <!-- Navigation Sidebar with Enhanced Readability -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <h2>🌌 CosmicBio-Explorer</h2>
+            </div>
+            <button class="sidebar-close" id="sidebarClose">&times;</button>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="#" data-section="dashboard" class="menu-link active">
+                <span class="menu-icon">🏠</span>Dashboard
+            </a></li>
+            <li><a href="#" data-section="research-explorer" class="menu-link">
+                <span class="menu-icon">🔬</span>Research Explorer
+            </a></li>
+            <li><a href="#" data-section="data-visualization" class="menu-link">
+                <span class="menu-icon">📊</span>Data Analytics
+            </a></li>
+            <li><a href="#" data-section="ai-companion" class="menu-link">
+                <span class="menu-icon">🤖</span>AI Companion
+            </a></li>
+            <li><a href="#" data-section="discovery-gallery" class="menu-link">
+                <span class="menu-icon">🖼️</span>Discovery Gallery
+            </a></li>
+            <li><a href="#" data-section="system-settings" class="menu-link">
+                <span class="menu-icon">⚙️</span>System Settings
+            </a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content with Enhanced Text Containers -->
+    <main class="main-content">
+        <!-- Header with Better Text Visibility -->
+        <header class="header">
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <h1 id="headerTitle"><CosmicBio-Explorer></CosmicBio-Explorer></h1>
+            <div class="header-actions">
+                <button class="btn btn--outline btn--sm" id="themeToggle">🌓</button>
+                <button class="btn btn--primary btn--sm" id="exportResearchData">Export Data</button>
+            </div>
+        </header>
+
+        <!--  Dashboard -->
+        <section id="dashboard-section" class="content-section active">
+            <!-- Hero Command Center with Readable Text -->
+            <div class="mission-hero">
+                <div class="hero-content">
+                    <h2>CosmicBio-Explorer</h2>
+                    <p class="mission-brief">Welcome to the advanced research platform featuring 607 cutting-edge scientific papers, intelligent AI analysis, and comprehensive space biology insights.</p>
+                    <div class="mission-stats">
+                        <div class="stat-module animated-counter">
+                            <span class="stat-number" data-target="607">0</span>
+                            <span class="stat-label">Research Papers</span>
+                        </div>
+                        <div class="stat-module animated-counter">
+                            <span class="stat-number" data-target="6">0</span>
+                            <span class="stat-label">Research Categories</span>
+                        </div>
+                        <div class="stat-module animated-counter">
+                            <span class="stat-number" data-target="3">0</span>
+                            <span class="stat-label">AI Systems</span>
+                        </div>
+                        <div class="stat-module animated-counter">
+                            <span class="stat-number" data-target="12">0</span>
+                            <span class="stat-label">Analysis Tools</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Intelligent Research Query Center -->
+            <div class="query-center">
+                <h3>🧠 Intelligent Research Discovery System</h3>
+                <div class="query-interface">
+                    <input type="text" class="form-control research-query" id="primaryResearchQuery" placeholder="Enter your space biology research question...">
+                    <button class="btn btn--primary query-btn" id="executeResearchQuery">
+                        <span class="query-text">🚀 Analyze & Discover</span>
+                        <span class="query-processing hidden">🔄 Processing...</span>
+                    </button>
+                </div>
+                <div class="research-suggestions">
+                    <span class="suggestion-tag" data-query="microgravity effects on human bones">Bone Loss in Space</span>
+                    <span class="suggestion-tag" data-query="plant growth in space environments">Space Agriculture</span>
+                    <span class="suggestion-tag" data-query="cardiovascular changes during spaceflight">Heart Health Studies</span>
+                    <span class="suggestion-tag" data-query="space radiation cancer risk">Radiation Research</span>
+                </div>
+                <div class="discovery-results-panel" id="researchDiscoveryResults"></div>
+            </div>
+
+            <!-- Research Categories Dashboard with Enhanced Visibility -->
+            <div class="categories-dashboard">
+                <div class="category-module" data-category="space_biology">
+                    <div class="category-header">
+                        <div class="category-icon">🚀</div>
+                        <div class="category-details">
+                            <h4>Space Biology</h4>
+                            <p class="paper-count">287 research papers</p>
+                        </div>
+                    </div>
+                    <div class="progress-indicator">
+                        <div class="progress-fill" style="width: 47.3%"></div>
+                    </div>
+                    <p class="category-summary">Biological effects of space environment on living organisms</p>
+                </div>
+
+                <div class="category-module" data-category="medical_research">
+                    <div class="category-header">
+                        <div class="category-icon">🏥</div>
+                        <div class="category-details">
+                            <h4>Medical Research</h4>
+                            <p class="paper-count">198 research papers</p>
+                        </div>
+                    </div>
+                    <div class="progress-indicator">
+                        <div class="progress-fill" style="width: 32.6%"></div>
+                    </div>
+                    <p class="category-summary">Medical and physiological research in space conditions</p>
+                </div>
+
+                <div class="category-module" data-category="radiation_studies">
+                    <div class="category-header">
+                        <div class="category-icon">☢️</div>
+                        <div class="category-details">
+                            <h4>Radiation Studies</h4>
+                            <p class="paper-count">156 research papers</p>
+                        </div>
+                    </div>
+                    <div class="progress-indicator">
+                        <div class="progress-fill" style="width: 25.7%"></div>
+                    </div>
+                    <p class="category-summary">Effects of cosmic radiation on biological systems</p>
+                </div>
+
+                <div class="category-module" data-category="plant_research">
+                    <div class="category-header">
+                        <div class="category-icon">🌱</div>
+                        <div class="category-details">
+                            <h4>Plant Research</h4>
+                            <p class="paper-count">145 research papers</p>
+                        </div>
+                    </div>
+                    <div class="progress-indicator">
+                        <div class="progress-fill" style="width: 23.9%"></div>
+                    </div>
+                    <p class="category-summary">Plant growth and adaptation studies in microgravity</p>
+                </div>
+
+                <div class="category-module" data-category="technology_innovation">
+                    <div class="category-header">
+                        <div class="category-icon">💻</div>
+                        <div class="category-details">
+                            <h4>Technology Innovation</h4>
+                            <p class="paper-count">134 research papers</p>
+                        </div>
+                    </div>
+                    <div class="progress-indicator">
+                        <div class="progress-fill" style="width: 22.1%"></div>
+                    </div>
+                    <p class="category-summary">Advanced space technology and innovation research</p>
+                </div>
+
+                <div class="category-module" data-category="microbiome">
+                    <div class="category-header">
+                        <div class="category-icon">🦠</div>
+                        <div class="category-details">
+                            <h4>Microbiome</h4>
+                            <p class="paper-count">89 research papers</p>
+                        </div>
+                    </div>
+                    <div class="progress-indicator">
+                        <div class="progress-fill" style="width: 14.7%"></div>
+                    </div>
+                    <p class="category-summary">Microbial studies in space environments</p>
+                </div>
+            </div>
+
+            <!-- Mission Tools with Enhanced Text -->
+            <div class="mission-tools">
+                <h3>Mission Control Tools</h3>
+                <div class="tools-array">
+                    <button class="tool-module" data-action="research-explorer">
+                        <div class="tool-icon">🔍</div>
+                        <h4>Deep Research Explorer</h4>
+                        <p>Advanced filtering and analysis capabilities</p>
+                    </button>
+                    <button class="tool-module" data-action="ai-analysis">
+                        <div class="tool-icon">🧠</div>
+                        <h4>AI Research Assistant</h4>
+                        <p>Intelligent insights and summaries</p>
+                    </button>
+                    <button class="tool-module" data-action="data-visualization">
+                        <div class="tool-icon">📈</div>
+                        <h4>Visual Analytics</h4>
+                        <p>Interactive charts and data visualization</p>
+                    </button>
+                    <button class="tool-module" data-action="discovery-gallery">
+                        <div class="tool-icon">🌌</div>
+                        <h4>Scientific Gallery</h4>
+                        <p>Visual research discovery library</p>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Explorer Section -->
+        <section id="research-explorer-section" class="content-section">
+            <div class="section-header">
+                <h2>🔬 Deep Research Explorer</h2>
+                <div class="explorer-controls">
+                    <button class="btn btn--outline btn--sm" id="resetResearchFilters">Reset Filters</button>
+                    <button class="btn btn--primary btn--sm" id="saveCurrentFilterSet">Save Configuration</button>
+                </div>
+            </div>
+
+            <!-- Advanced Research Filters -->
+            <div class="research-filters-panel">
+                <div class="filter-section">
+                    <label class="form-label">📅 Publication Timeline</label>
+                    <div class="timeline-filter">
+                        <input type="range" id="publicationYearMin" min="2020" max="2025" value="2020">
+                        <input type="range" id="publicationYearMax" min="2020" max="2025" value="2025">
+                        <div class="timeline-display">
+                            <span id="yearRangeMinDisplay">2020</span> - <span id="yearRangeMaxDisplay">2025</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-section">
+                    <label class="form-label">📊 Citation Impact Range</label>
+                    <div class="impact-filter">
+                        <input type="range" id="citationImpactMin" min="0" max="1000" value="0">
+                        <input type="range" id="citationImpactMax" min="0" max="1000" value="1000">
+                        <div class="impact-display">
+                            <span id="citationMinRangeDisplay">0</span> - <span id="citationMaxRangeDisplay">1000</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-section">
+                    <label class="form-label">🔬 Research Methodology</label>
+                    <select multiple class="form-control multi-filter" id="researchMethodologyFilter">
+                        <option value="Experimental">Experimental Studies</option>
+                        <option value="Observational">Observational Research</option>
+                        <option value="Review">Literature Reviews</option>
+                        <option value="Meta-analysis">Meta-Analysis</option>
+                        <option value="Case Study">Case Studies</option>
+                    </select>
+                </div>
+                <div class="filter-section">
+                    <label class="form-label">🧬 Research Subjects</label>
+                    <select multiple class="form-control multi-filter" id="subjectOrganismFilter">
+                        <option value="Human">Human Studies</option>
+                        <option value="Mouse">Mouse Models</option>
+                        <option value="Plant">Plant Research</option>
+                        <option value="Microorganism">Microorganism Studies</option>
+                        <option value="Cell Culture">Cell Culture</option>
+                    </select>
+                </div>
+                <div class="filter-section">
+                    <label class="form-label">📂 Research Categories</label>
+                    <div class="category-checkboxes">
+                        <label><input type="checkbox" value="space_biology" checked> Space Biology</label>
+                        <label><input type="checkbox" value="medical_research" checked> Medical Research</label>
+                        <label><input type="checkbox" value="plant_research" checked> Plant Research</label>
+                        <label><input type="checkbox" value="radiation_studies" checked> Radiation Studies</label>
+                        <label><input type="checkbox" value="technology_innovation" checked> Technology Innovation</label>
+                        <label><input type="checkbox" value="microbiome" checked> Microbiome</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Research Results Display -->
+            <div class="research-results-container">
+                <div class="results-header">
+                    <h3>Research Results <span id="resultsCountDisplay">(607 papers)</span></h3>
+                    <div class="view-toggle">
+                        <button class="btn btn--outline btn--sm active" data-view="list">List View</button>
+                        <button class="btn btn--outline btn--sm" data-view="grid">Grid View</button>
+                        <button class="btn btn--outline btn--sm" data-view="timeline">Timeline View</button>
+                    </div>
+                </div>
+                <div class="research-papers-list" id="researchPapersList"></div>
+                <div class="pagination-controls" id="researchPagination"></div>
+            </div>
+        </section>
+
+        <!-- Data Visualization Section -->
+        <section id="data-visualization-section" class="content-section">
+            <div class="section-header">
+                <h2>📊 Advanced Data Analytics</h2>
+                <div class="analytics-controls">
+                    <select class="form-control" id="analyticsChartSelector">
+                        <option value="all">All Analytics</option>
+                        <option value="category-distribution">Category Distribution</option>
+                        <option value="publication-timeline">Publication Timeline</option>
+                        <option value="impact-analysis">Impact Analysis</option>
+                        <option value="collaboration-network">Research Networks</option>
+                    </select>
+                    <button class="btn btn--outline btn--sm" id="exportAnalyticsData">Export Charts</button>
+                </div>
+            </div>
+
+            <div class="analytics-dashboard">
+                <div class="chart-container" style="position: relative; height: 400px;" id="categoryDistributionContainer">
+                    <h3>Research Categories Distribution</h3>
+                    <canvas id="categoryDistributionChart"></canvas>
+                </div>
+                <div class="chart-container" style="position: relative; height: 400px;" id="publicationTimelineContainer">
+                    <h3>Publication Timeline Analysis (2020-2025)</h3>
+                    <canvas id="publicationTimelineChart"></canvas>
+                </div>
+                <div class="chart-container" style="position: relative; height: 400px;" id="researchImpactContainer">
+                    <h3>Research Impact & Citation Analysis</h3>
+                    <canvas id="researchImpactChart"></canvas>
+                </div>
+                <div class="chart-container" style="position: relative; height: 400px;" id="collaborationNetworkContainer">
+                    <h3>Research Collaboration Networks</h3>
+                    <canvas id="collaborationNetworkChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Companion Section -->
+        <section id="ai-companion-section" class="content-section">
+            <div class="section-header">
+                <h2>🤖 AI Research Companion</h2>
+                <div class="ai-system-status">
+                    <span class="status status--success" id="aiSystemStatus">AI Systems Online</span>
+                </div>
+            </div>
+
+            <div class="ai-interface-layout">
+                <div class="conversation-interface">
+                    <div class="conversation-display" id="aiConversationDisplay">
+                        <div class="message ai-message">
+                            <div class="message-avatar">🤖</div>
+                            <div class="message-content">
+                                <p>Hello! I'm your AI Research Companion. I have access to comprehensive space biology training data and can help you with:</p>
+                                <ul class="capability-list">
+                                    <li>Analyzing space biology research findings</li>
+                                    <li>Providing insights on microgravity effects</li>
+                                    <li>Explaining plant adaptation mechanisms</li>
+                                    <li>Discussing radiation effects on biological systems</li>
+                                    <li>Generating contextual research summaries</li>
+                                </ul>
+                                <p>What would you like to explore in space biology research?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="conversation-input-area">
+                        <textarea class="form-control conversation-input" id="aiConversationInput" placeholder="Ask me about space biology research..." rows="3"></textarea>
+                        <div class="conversation-controls">
+                            <select class="form-control" id="aiModelSelection">
+                                <option value="local">Local Training Data</option>
+                                <option value="gemini">Google Gemini</option>
+                                <option value="huggingface">Hugging Face</option>
+                            </select>
+                            <button class="btn btn--primary" id="sendConversationMessage">
+                                <span class="send-message-text">Send</span>
+                                <span class="ai-thinking hidden">Analyzing...</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ai-analysis-tools">
+                    <h3>AI Analysis Tools</h3>
+                    <div class="analysis-tools-panel">
+                        <button class="analysis-tool-btn" data-action="research-summary">
+                            <span class="tool-icon">📄</span>
+                            Generate Research Summary
+                        </button>
+                        <button class="analysis-tool-btn" data-action="trend-insights">
+                            <span class="tool-icon">📈</span>
+                            Trend Analysis
+                        </button>
+                        <button class="analysis-tool-btn" data-action="keyword-patterns">
+                            <span class="tool-icon">🏷️</span>
+                            Keyword Pattern Analysis
+                        </button>
+                        <button class="analysis-tool-btn" data-action="research-opportunities">
+                            <span class="tool-icon">🔍</span>
+                            Research Opportunities
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Discovery Gallery Section -->
+        <section id="discovery-gallery-section" class="content-section">
+            <div class="section-header">
+                <h2>🌌 Scientific Discovery Gallery</h2>
+                <div class="gallery-search-controls">
+                    <input type="text" class="form-control" id="gallerySearchInput" placeholder="Search for scientific discoveries...">
+                    <button class="btn btn--primary" id="executeGallerySearch">Discover Images</button>
+                </div>
+            </div>
+
+            <div class="discovery-categories">
+                <button class="discovery-filter active" data-category="space">🚀 Space Research</button>
+                <button class="discovery-filter" data-category="biology">🧬 Biology</button>
+                <button class="discovery-filter" data-category="medical">🏥 Medical</button>
+                <button class="discovery-filter" data-category="technology">💻 Technology</button>
+                <button class="discovery-filter" data-category="nature">🌿 Nature</button>
+            </div>
+
+            <div class="discovery-gallery" id="scientificDiscoveryGallery">
+                <div class="gallery-loading-state hidden" id="galleryLoadingIndicator">
+                    <div class="loading-spinner"></div>
+                    <p>Discovering scientific images...</p>
+                </div>
+                <div class="discovery-grid" id="discoveryImageGrid"></div>
+            </div>
+
+            <!-- Discovery Image Modal -->
+            <div class="modal hidden" id="discoveryImageModal">
+                <div class="modal-content">
+                    <button class="modal-close" id="closeDiscoveryModal">&times;</button>
+                    <img class="modal-image" id="modalDiscoveryImage" alt="">
+                    <div class="discovery-info" id="discoveryImageInfo">
+                        <h4 id="discoveryImageTitle"></h4>
+                        <p id="discoveryImageDescription"></p>
+                        <div class="discovery-meta">
+                            <span id="discoveryImageAuthor"></span>
+                            <a href="#" id="discoveryImageSource" target="_blank">View Source</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- System Settings Section -->
+        <section id="system-settings-section" class="content-section">
+            <div class="section-header">
+                <h2>⚙️ System Configuration</h2>
+            </div>
+
+            <div class="settings-dashboard">
+                <div class="settings-module">
+                    <h3>🔑 API Configuration</h3>
+                    <div class="form-group">
+                        <label class="form-label">Google Gemini API Key</label>
+                        <input type="password" class="form-control" id="geminiAPIKey" placeholder="Enter your Gemini API key">
+                        <small class="form-help">Obtain free API access at ai.google.dev</small>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Unsplash API Key</label>
+                        <input type="password" class="form-control" id="unsplashAPIKey" placeholder="Enter your Unsplash API key">
+                        <small class="form-help">Get free API access at unsplash.com/developers</small>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Hugging Face API Key</label>
+                        <input type="password" class="form-control" id="huggingfaceAPIKey" placeholder="Enter your Hugging Face API key">
+                        <small class="form-help">Register at huggingface.co for API access</small>
+                    </div>
+                    <button class="btn btn--primary" id="saveAPIConfiguration">Save Configuration</button>
+                </div>
+
+                <div class="settings-module">
+                    <h3>🎨 Display Configuration</h3>
+                    <div class="form-group">
+                        <label class="form-label">Theme Selection</label>
+                        <select class="form-control" id="themeSelection">
+                            <option value="auto">Auto (System)</option>
+                            <option value="light">Light Theme</option>
+                            <option value="dark">Dark Theme</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Results per page</label>
+                        <select class="form-control" id="resultsPerPageSetting">
+                            <option value="10">10 Results</option>
+                            <option value="20" selected>20 Results</option>
+                            <option value="50">50 Results</option>
+                            <option value="100">100 Results</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Animation Settings</label>
+                        <select class="form-control" id="animationSettings">
+                            <option value="true">Enable Animations</option>
+                            <option value="false">Disable Animations</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="settings-module">
+                    <h3>📤 Export Configuration</h3>
+                    <div class="form-group">
+                        <label class="form-label">Default export format</label>
+                        <select class="form-control" id="defaultExportFormat">
+                            <option value="json">JSON Format</option>
+                            <option value="csv">CSV Format</option>
+                            <option value="bibtex">BibTeX Format</option>
+                            <option value="pdf">PDF Report</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Include research metadata</label>
+                        <select class="form-control" id="includeResearchMetadata">
+                            <option value="true">Include Metadata</option>
+                            <option value="false">Data Only</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="settings-module">
+                    <h3>📊 System Status</h3>
+                    <div class="system-status-list">
+                        <div class="system-status-item">
+                            <span class="api-service-name">Google Gemini API</span>
+                            <span class="status status--info" id="geminiSystemStatus">Not Configured</span>
+                        </div>
+                        <div class="system-status-item">
+                            <span class="api-service-name">Unsplash Images API</span>
+                            <span class="status status--info" id="unsplashSystemStatus">Not Configured</span>
+                        </div>
+                        <div class="system-status-item">
+                            <span class="api-service-name">Hugging Face API</span>
+                            <span class="status status--info" id="huggingfaceSystemStatus">Not Configured</span>
+                        </div>
+                    </div>
+                    <button class="btn btn--outline" id="testSystemConnections">Test All Connections</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Global Processing Overlay -->
+    <div class="loading-overlay hidden" id="globalProcessingOverlay">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <p id="processingStatusText">Processing your request...</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
